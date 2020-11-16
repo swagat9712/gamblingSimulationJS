@@ -1,7 +1,7 @@
 console.log("Welcome to Gambling simulation!");
 let dailyStake = 100;
 let everyGameBet = 1;
-class GamblingProblem{
+class GamblingProblem {
     constructor(win, lose){
         this.win = win;
         this.lose = lose;
@@ -11,17 +11,17 @@ class GamblingProblem{
     }
     checkWinOrLoose(){
         let score = this.gambleWinOrLoose();
-
-        if (score == 1) {
-            this.win += 1;
-            dailyStake += 1;
-        }
-        if (score == 0) {
-            this.lose += 1;
-            dailyStake -= 1;
+        while (dailyStake != 150 && dailyStake != 50) {
+            if (score == 1) {
+                this.win += 1;
+                dailyStake += 1;
+            }
+            if (score == 0) {
+                this.lose += 1;
+                dailyStake -= 1;
+            }
         }
 
     }
 
 }
-
