@@ -1,7 +1,7 @@
 console.log("Welcome to Gambling simulation!");
 let dailyStake = 100;
 let everyGameBet = 1;
-class GamblingProblem(){
+class GamblingProblem{
     constructor(win, lose){
         this.win = win;
         this.lose = lose;
