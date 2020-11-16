@@ -1,3 +1,4 @@
+import * as Utility from "./util.js";
 console.log("Welcome to Gambling simulation!");
-dailyMergin = 100;
-everyDayBet = 1;
+let GamblingProblem = Utility.default;
+new GamblingProblem(0,0);
