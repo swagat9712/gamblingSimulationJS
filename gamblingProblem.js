@@ -1,4 +1,7 @@
-import * as Utility from "./util.js";
-console.log("Welcome to Gambling simulation!");
-let GamblingProblem = Utility.default;
-new GamblingProblem(0,0);
+import * as Utility from "./Utility.js";
+console.log("Welcome to Sanke and Ladders!");
+let SnakeAndLadders = Utility.default;
+new SnakeandLadder();
+Utility.playerPosition1();
+Utility.playerPosition2();
+Utility.calculateWin();
