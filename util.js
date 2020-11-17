@@ -1,10 +1,11 @@
-export let dailyStake = 100;
-export let totalDays = 0;
-export let totalAmount = 0;
+
 export default class GamblingProblem {
-    constructor(win, lose) {
-        this.win = win;
-        this.lose = lose;
+    constructor() {
+        this.win = 0;
+        this.lose = 0;
+        this.dailyStake = 100;
+        this.totalDays = 0;
+        this.totalAmount = 0;
     }
     //taking a random value 0 or 1// 
     gambleWinOrLoose() {
@@ -14,14 +15,14 @@ export default class GamblingProblem {
     checkWinOrLoose() {
         try {
             let score = this.gambleWinOrLoose();
-            while (dailyStake != 150 && dailyStake != 50) {
+            while (this.dailyStake != 150 && this.dailyStake != 50) {
                 if (score == 1) {
                     this.win++;
-                    dailyStake++;
+                    this.dailyStake++;
                 }
                 if (score == 0) {
                     this.lose++;
-                    dailyStake--;
+                    this.dailyStake--;
                 }
             }
         } catch (e) {
@@ -31,14 +32,14 @@ export default class GamblingProblem {
     //Calling the checkWinOrLoose method 20 times//
     resultAfterNumbreOfDays() {
         try {
-            while (totalDays < 20) {
-                console.log("Day:" + totalDays);
+            while (this.totalDays < 20) {
+                console.log("Day:" + this.totalDays);
                 this.checkWinOrLoose();
-                totalAmount = totalAmount + dailyStake;
-                dailyStake = 100;
-                totalDays++;
+                this.totalAmount = this.totalAmount + this.dailyStake;
+                this.dailyStake = 100;
+                this.totalDays++;
             }
-            console.log("Total Days: " + totalDays + " Total amount: " + totalAmount);
+            console.log("Total Days: " + this.totalDays + " Total amount: " + this.totalAmount);
         }
         catch (e) {
             console.log("Exception: " + e);
