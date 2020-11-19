@@ -56,8 +56,8 @@ class GamblingProblem {
 
             }
             this.totalAmount = this.totalAmount + 100;
-            console.log(`Total Days: ${this.totalDays}  Total amount: ${this.totalAmount} \nLuckiest Day: ${this.luckiestDay}  Unluckiest Day: ${this.unluckiestDay}`);
-           
+            console.log(`Total Days: ${this.totalDays}  Total amount this month: ${this.totalAmount} \nLuckiest Day: ${this.luckiestDay}  Unluckiest Day: ${this.unluckiestDay}`);
+            this.totalDays = 0;
         }
         catch (e) {
             console.log("Exception2: " + e);
@@ -67,3 +67,4 @@ class GamblingProblem {
 }
 
 module.exports = new GamblingProblem();
+
