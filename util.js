@@ -12,11 +12,11 @@ class GamblingProblem {
         this.unluckiestDay = 0;
     }
     //taking a random value 0 or 1// 
-    gambleWinOrLoose() {
+    gambleWinOrLoose = () => {
         return Math.floor(Math.random() * 2);
     }
     //takeing win or loose//
-    checkWinOrLoose() {
+    checkWinOrLoose = () => {
         try {
             while (this.dailyStake != 150 && this.dailyStake != 50) {
                 let score = this.gambleWinOrLoose();
@@ -29,7 +29,7 @@ class GamblingProblem {
                     this.dailyStake--;
                 }
             }
-            console.log("win: " + this.win + " lose: " + this.lose + " Earned: " + this.dailyStake);
+            console.log(`win: ${this.win} lose: ${this.lose} Earned: ${this.dailyStake}`);
             if (this.win > this.bestWin && this.dailyStake == 150) {
                 this.bestWin = this.win;
                 this.luckiestDay = this.totalDays;
@@ -45,19 +45,19 @@ class GamblingProblem {
         }
     }
     //Calling the checkWinOrLoose method 20 times//
-    resultAfterNumbreOfDays() {
+    resultAfterNumbreOfDays = () => {
         try {
             while (this.totalDays < 30) {
                 this.totalDays++;
-                console.log("Day:" + this.totalDays);
+                console.log(`Day: ${this.totalDays}`);
                 this.checkWinOrLoose();
                 this.totalAmount = this.totalAmount + this.dailyStake - 100;
                 this.dailyStake = 100;
 
             }
             this.totalAmount = this.totalAmount + 100;
-            console.log("Total Days: " + this.totalDays + " Total amount: " + this.totalAmount);
-            console.log("Luckiest Day: " + this.luckiestDay + " Unluckiest Day: " + this.unluckiestDay);
+            console.log(`Total Days: ${this.totalDays}  Total amount: ${this.totalAmount} \nLuckiest Day: ${this.luckiestDay}  Unluckiest Day: ${this.unluckiestDay}`);
+           
         }
         catch (e) {
             console.log("Exception2: " + e);
