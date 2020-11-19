@@ -1,22 +1,25 @@
 
 let utility = require("./util.js");
-let readlineSync = require('readline-sync');
+var readlineSync = require('readline-sync');
 console.log("Welcome to Gambling simulation!");
 utility.resultAfterNumbreOfDays();
 continueMonth = function() {
     let isTerminated = false;
+    let count = 2;
     try {
         while (isTerminated != true) {
-            let choice = readlineSync.prompt("Enter if you want to continue next month(yes/no): ");
-            if (choice == "yes") {
+            //let choice = readlineSync.prompt("Enter if you want to continue next month(yes/no): ");
+            let choice = readlineSync.question(`Enter if you want to continue to month ${count} (Y/N):`);
+            if (choice == "Y") {
                 utility.resultAfterNumbreOfDays();
+                count++ ;
             }
-            if (choice == "no") {
+            if (choice == "N") {
                 console.log("Good Gambling!");
                 isTerminated = true;
             }
             else {
-                console.log("Wrong Choice!");
+                console.log("Wrong Choice! or amount less then $100");
             }
         }
     }
